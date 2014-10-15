@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Unfolding Word</title>
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=320.1, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+
+<script src="assets/js/jquery-2.1.1.min.js"></script>
+<script src="assets/js/jquery.ba-hashchange.min.js"></script>
+
+<script src="assets/js/mustache.min.js"></script> 
+<script src="assets/js/jquery.mustache.js"></script> 
+
+<!-- cordova -->
+<script src="cordova.js"></script> 
+
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/init.js"></script>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/read.js"></script>
+<script src="assets/js/languages.js"></script>
+<script src="assets/js/hash.js"></script>
+
+<script type="text/javascript" src="assets/js/iscroll.js"></script>
+<script type="text/javascript" src="assets/js/iscroll-probe.js"></script>
+
+
+
+
+<link type="text/css" rel="stylesheet" href="assets/css/imports.css">
+
+</head>
+
+<body class="_rtl _ios_7">
+
+<main>
+
+	<div id="read" class="panel">
+
+		<header><a id="contents_button" href="#content/stories/en">&nbsp;</a><h1></h1><a id="languages_button" href="#languages">&nbsp;</a></header>
+		
+		<div id="wrapper">
+		
+			<div id="scroller">
+				
+				<ul>
+				
+				</ul>
+		
+				<script id="frames-list" type="text/html">
+				
+					<li>
+					
+						<figure>
+						
+							<img src="assets/img/360/obs-en-{{id}}.jpg" data-src="http://api.unfoldingword.org/obs/jpg/1/en/360px/obs-en-{{id}}.jpg">
+							
+						</figure>
+					
+						<p>{{text}}</p>
+	
+					</li>		
+							
+				</script>
+		
+			</div>
+		
+			<a class="tap_to_scroll" id="tap_to_scroll_left" href="#"></a>
+			<a class="tap_to_scroll" id="tap_to_scroll_right" href="#"></a>
+			<a id="next_story" href="#"></a>
+			
+		</div>
+
+	</div>
+	
+	
+	
+	
+	
+	<div id="contents" class="panel">
+	
+		<header><h1>Stories</h1><a class="true_back" href="#read/it/en/0">&nbsp;</a></header>
+
+
+		<div class="tscroll">
+		
+			<ul class="list">
+				
+			</ul>
+			
+			<script id="stories-list" type="text/html">
+			
+				<li>
+					<a href="#read/it/{{lang}}/{{index}}" >
+						
+						<figure>
+							<img src="assets/img/360/obs-en-{{number}}-01.jpg"  width="100%" height="100%">
+						</figure>
+						
+						<hgroup>
+						
+							<h1>{{title}} </h1>
+							<h2>{{ref}}</h2>
+						
+						</hgroup>
+						
+					</a>
+				</li>		
+						
+			</script>
+			
+		</div>
+
+	</div>
+	
+	
+	<div id="languages" class="panel">
+	
+		<header><h1>Languages</h1><a class="true_back" href="#read/it/en/0">&nbsp;</a></header>
+		
+		<div class="tscroll">
+		
+			<a id="check_for_updates" href="#"><span>&nbsp;</span></a>	
+
+			<ul class="list">
+			
+			
+			</ul>
+			
+			
+			<div class="footnote">
+			
+				<p>We use a three-level, Church-centric approach for identifying the fidelity of translated Biblical content:</p>
+				
+				
+				<ol>
+					<li><em class="checking_level checking_level_1"></em>
+						Level 1: internal — Translator (or team) affirms that translation is in line with Statement of Faith and Translation Guidelines.
+					</li>
+					
+					<li><em class="checking_level checking_level_2"></em>
+						Level 2: external — Translation is independently checked and confirmed by at least two others not on the translation team.
+					</li>
+					
+					<li><em class="checking_level checking_level_3"></em>
+						Level 3: authenticated — Translation is checked and confirmed by leadership of at least one Church network with native speakers of the language.
+					</li>
+				
+				</ol>
+				
+			</div>
+			
+			<p id="version">version 1.2</p>
+			
+			
+			<script id="language-list" type="text/html">
+			
+				<li>
+					<a href="#content/stories/{{language}}" data-lang="{{language}}" >
+						
+						<hgroup>
+						
+							<em class="checking_level checking_level_{{status.checking_level}}"></em> 
+						
+							<h3>{{string}} <span>[{{language}}]</span></h3>
+						
+						</hgroup>
+					</a>
+					
+					<a class="info" href="#">info</a>
+					<dl>           
+						<dt>Checking Entity:</dt>      
+						<dd>{{status.checking_entity}}</dd>           
+						
+						<dt>Checking Level:</dt>      
+						<dd>{{status.checking_level}}</dd>           
+						
+						<dt>Version:</dt>      
+						<dd>{{status.version}}</dd>           
+						
+						<dt>Publish Date:</dt>      
+						<dd>{{status.publish_date}}</dd>           
+					</dl>
+				</li>		
+						
+			</script>
+		
+
+		
+		</div>
+	
+	</div>
+	
+	
+	
+
+</main>
+
+<div id="loading">
+
+</div>
+
+</body>
+</html>
