@@ -1,5 +1,5 @@
-uW-mobile-app
-=============
+For the latest version of the unfoldingWord App, see
 
-A cross-platform (PhoneGap) mobile app for consuming content from unfoldingWord.
+Android: https://github.com/unfoldingWord-dev/uw-android
 
+iOS: https://github.com/unfoldingWord-dev/uw-ios
